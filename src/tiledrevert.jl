@@ -2,10 +2,6 @@
 # 2017
 # tiledrevert
 
-module TiledRevert
-
-export extractTilemap, tiledRevert
-
 using JSON
 using Libz
 
@@ -50,4 +46,13 @@ function tiledRevert(infile, outfile)
 end
 
 
+function main()
+    if length(ARGS) < 2
+        println("Usage: tiledrevert infile outfile")
+        exit()
+    end
+
+    tiledRevert(ARGS[1], ARGS[2])
 end
+
+main()
